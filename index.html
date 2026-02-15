@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>روبوت دردشة Liquid Glass</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="chat-card" aria-label="واجهة الدردشة">
+        <header class="chat-header glass">
+          <div class="orb" aria-hidden="true"></div>
+          <div>
+            <h1>مساعدك الذكي</h1>
+            <p>دافئ • واضح • دقيق</p>
+          </div>
+        </header>
+
+        <div id="chatWindow" class="chat-window" aria-live="polite"></div>
+
+        <form id="chatForm" class="chat-form glass" autocomplete="off">
+          <label class="sr-only" for="userInput">اكتب رسالتك</label>
+          <textarea
+            id="userInput"
+            rows="1"
+            placeholder="اكتب سؤالك هنا..."
+            required
+          ></textarea>
+          <button type="submit" aria-label="إرسال">إرسال</button>
+        </form>
+      </section>
+    </main>
+
+    <template id="messageTemplate">
+      <article class="message">
+        <span class="message-role"></span>
+        <div class="message-bubble"></div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
